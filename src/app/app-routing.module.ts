@@ -1,12 +1,30 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AppComponent } from './app.component';
 
 const routes: Routes = [
   {
-    path: 'three',
-    loadChildren: () =>
-      import('./three-js/three-js.module').then((m) => m.ThreeJsModule),
+    path: '',
+    component: AppComponent,
+    children: [
+      {
+        path: '',
+        loadChildren: () =>
+          import('./randing/randing.module').then((m) => m.RandingModule),
+      },
+      {
+        path: 'three',
+        loadChildren: () =>
+          import('./example/three-js/three-js.module').then((m) => m.ThreeJsModule),
+      },
+      {
+        path: 'lottie',
+        loadChildren: () =>
+          import('./example/lottie/lottie.module').then((m) => m.LottieModule),
+      },
+    ]
   },
+  { path: '**', redirectTo: 'error/404' },
 ];
 
 @NgModule({

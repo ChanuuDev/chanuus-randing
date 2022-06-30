@@ -1,9 +1,9 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import {ThreeJsModule} from "./three-js/three-js.module";
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {ExampleModule} from "./example/example.module";
 
 @NgModule({
   declarations: [
@@ -12,9 +12,10 @@ import {ThreeJsModule} from "./three-js/three-js.module";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ThreeJsModule,
+    ExampleModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
