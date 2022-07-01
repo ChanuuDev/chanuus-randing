@@ -7,7 +7,7 @@
 
 export const environment = {
   production: false,
-
+  randingApiAddress: 'http://localhost:3003',
 };
 
 /*
