@@ -8,10 +8,17 @@ import { AnimationOptions } from "ngx-lottie";
 })
 export class Ex01Component implements OnInit {
 
-  lottieOptions: AnimationOptions = {
+  lottieOptions01: AnimationOptions = {
     path: '/assets/lottie-animations/sample-anime.json'
-  }
+  };
 
+  lottieOptions02: AnimationOptions = {
+    path: '/assets/lottie-animations/sample-anime02.json'
+  };
+
+  lottieOptions03: AnimationOptions = {
+    path: '/assets/lottie-animations/sample-anime03.json'
+  };
 
   constructor() { }
 

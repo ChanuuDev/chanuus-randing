@@ -22,6 +22,11 @@ const routes: Routes = [
         loadChildren: () =>
           import('./example/lottie/lottie.module').then((m) => m.LottieModule),
       },
+      {
+        path: 'gsap',
+        loadChildren: () =>
+          import('./example/gsap/gsap.module').then((m) => m.GsapModule),
+      },
     ]
   },
   { path: '**', redirectTo: 'error/404' },
