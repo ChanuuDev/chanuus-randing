@@ -1,5 +1,5 @@
 import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
-//
+
 @Component({
   selector: 'app-ex01',
   templateUrl: './ex01.component.html',
