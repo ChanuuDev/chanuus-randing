@@ -1,0 +1,77 @@
+@keyframes showAnimations {
+  0% {
+    top: 300px;
+    transform: rotate(0deg);
+  }
+
+  100% {
+    top: 0;
+    transform: rotate(720deg);
+  }
+}
+
+@keyframes rotateAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(720deg);
+  }
+}
+
+.lottie-visibility-hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 1s;
+}
+
+.lottie-ex02-wrap {
+  width: 500px;
+  height: 375px;
+  position: relative;
+
+  .lotte-ex02 {
+    position: absolute;
+    cursor: pointer;
+    background-color: #478c41;
+    width: 500px;
+    transition: all 1s;
+    animation: showAnimations 1s ease;
+
+    .inner-texts {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      width: 500px;
+      height: 375px;
+      font-weight: bold;
+      font-size: 35px;
+      color: #fff;
+      transition: all 1s;
+    }
+
+    .lottie-ex02-item {
+      opacity: 0;
+      transition: all 1s;
+    }
+
+    &:hover {
+      background-color: transparent;
+      animation: rotateAnimation 1s ease;
+      transition: all 1s;
+
+      .inner-texts {
+        opacity: 0;
+        transition: all 1s;
+      }
+
+      .lottie-ex02-item {
+        opacity: 1;
+        transition: all 1s;
+      }
+    }
+  }
+
+}

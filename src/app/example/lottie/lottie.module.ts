@@ -4,6 +4,7 @@ import {LottieModule as LottieModules} from "ngx-lottie";
 import player from "lottie-web";
 import {Ex01Component} from './ex01/ex01.component';
 import {RouterModule, Routes} from "@angular/router";
+import { Ex02Component } from './ex02/ex02.component';
 
 /* Lottie Json Animation Player */
 export function playerFactory() {
@@ -18,7 +19,8 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    Ex01Component
+    Ex01Component,
+    Ex02Component
   ],
   imports: [
     CommonModule,

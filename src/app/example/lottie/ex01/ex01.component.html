@@ -1,16 +1,9 @@
-<p>Lottie Sample !</p>
+<div class="page-wrap" id="page-wrap">
+  <ng-lottie width="500px" [options]="lottieOptions01"
+             class="lottie-item"
+             (click)="showNextSceneCover()"
+             (animationCreated)="handleAnimation1($event)"></ng-lottie>
 
-<section>
-  <ng-lottie width="500px" [options]="lottieOptions01"></ng-lottie>
-</section>
+  <div class="next-scene01-cover" id="next-scene01-cover"></div>
 
-<section>
-  <ng-lottie width="500px" [options]="lottieOptions02"></ng-lottie>
-</section>
-
-<section>
-  <ng-lottie width="500px" [options]="lottieOptions03"></ng-lottie>
-</section>
-
-
-
+</div>

@@ -1,0 +1,36 @@
+<p>Lottie Sample !</p>
+
+<section >
+  <ng-lottie width="500px" [options]="lottieOptions01"
+             (animationCreated)="handleAnimation1($event)"
+             (mouseover)="ex01LottieMouseOver($event)"
+             (mouseout)="ex01LottieMouseOut($event)"></ng-lottie>
+</section>
+
+<div class="lottie-ex02-wrap">
+  <section class="lotte-ex02">
+
+    <div class="inner-texts">
+      Mouse Hover This Here.
+    </div>
+
+    <ng-lottie width="500px"
+               class="lottie-ex02-item"
+               [options]="lottieOptions02"
+               (animationCreated)="handleAnimation2($event)"
+    ></ng-lottie>
+  </section>
+</div>
+
+<section>
+  <ng-lottie width="500px"
+             id="lottie-03"
+             style="cursor: pointer"
+             [options]="lottieOptions03"
+             (click)="ex03LottieMouseOver($event)"
+             (animationCreated)="handleAnimation3($event)"
+  ></ng-lottie>
+</section>
+
+
+

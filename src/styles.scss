@@ -1,2 +1,17 @@
 @import "./assets/styles/utils";
 
+body {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-red {
+    background-color: red;
+    color: #ffffff;
+  }
+
+  --red-01: #ff0000;
+  --green-01: #00ff00;
+  --blue-01: #0000ff;
+}

@@ -1,37 +1,26 @@
-import {AfterViewInit, Component, ElementRef, OnInit, Renderer2, ViewChild} from '@angular/core';
-import * as THREE from 'three';
+import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import * as THREE from "three";
 
 @Component({
-  selector: 'app-ex01',
-  templateUrl: './ex01.component.html',
-  styleUrls: ['./ex01.component.scss']
+  selector: 'app-ex02',
+  templateUrl: './ex02.component.html',
+  styleUrls: ['./ex02.component.scss']
 })
-export class Ex01Component implements OnInit, AfterViewInit {
+export class Ex02Component implements OnInit, AfterViewInit {
 
   @ViewChild('threeCanvas') threeCanvasEl: ElementRef | undefined;
 
-  constructor(
-    private renderer: Renderer2,
-  ) {
-  }
+  constructor() { }
 
   ngOnInit(): void {
   }
 
   ngAfterViewInit(): void {
+    // this.animateExample();
     this.animateSampleRect();
-    // this.sampleEx01();
   }
 
-  sampleEx01(): void {
-    const canvas = this.threeCanvasEl?.nativeElement;
-
-    if (!canvas) {
-      throw new Error('canvas is not available !!!');
-    }
-
-    const renderer = new THREE.WebGLRenderer({canvas});
-    renderer.setSize(window.innerWidth, window.innerHeight);
+  animateExample(): void {
   }
 
   animateSampleRect(): void {
@@ -78,6 +67,5 @@ export class Ex01Component implements OnInit, AfterViewInit {
     }
 
   }
-
 
 }
