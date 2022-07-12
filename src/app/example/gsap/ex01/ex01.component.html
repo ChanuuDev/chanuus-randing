@@ -1,16 +1,98 @@
 <div class="section-wrap" id="section-wrap">
   <div id="section-content">
-    <section class="section bg-black" id="gsap-section-01">
-      <button type="button" (click)="clickTest()"> 젤 밑으로 </button>
+    <section class="section bg-skyblue" id="gsap-section-01">
+      <button type="button" (click)="clickTest()"> 젤 밑으로</button>
+
+      <div class="box box-a" data-speed="0.9">a</div>
+      <div class="box box-b" data-speed="1.8">b</div>
+      <div class="box box-c" data-speed="1.2">c</div>
     </section>
 
-    <section class="section bg-white" id="gsap-section-02"></section>
+    <section class="section bg-black" id="gsap-section-02">
+      <video class="video-fill"
+             id="play-video-sample"
+             autoplay="autoplay"
+             muted="muted"
+             loop>
+        <source src="./assets/videos/samples/sample-02.mp4" type="video/mp4">
+      </video>
+      <div class="video-cover">
+        <h2 id="video-cover-text">비디오 위에 텍스트 텍스트 텍스트 .. </h2>
+      </div>
+    </section>
 
-    <section class="section bg-red" id="gsap-section-03"></section>
+    <section class="section bg-red" id="gsap-section-03">
+      <div id="quote">
+        <h1>SplitText makes it easy to break apart the text in an HTML element so that each character, word, and/or line
+          is wrapped in its own div tag.
+        </h1>
+      </div>
+    </section>
 
     <section class="section bg-green" id="gsap-section-04"></section>
 
     <section class="section bg-blue" id="gsap-section-05"></section>
+
+    <div class="cInnerContent">
+      <h1 class="header-section gs_reveal ipsType_center">스크롤 애니메이션 스크롤 애니메이션 스크롤 애니메이션 </h1>
+
+      <div class="features">
+
+        <div class="feature ipsSpacer_bottom_double ipsGrid ipsGrid_collapsePhone">
+          <div class="featured-image-container ipsGrid_span5 gs_reveal gs_reveal_fromLeft">
+            <div class="card">
+              <img width="479" src="https://picsum.photos/479/479?index=1" alt="">
+            </div>
+          </div>
+
+          <div class="ipsGrid_span7 ipsType_left">
+            <h2 class="heading_large gs_reveal">Create amazing <strong>SVG</strong> animations</h2>
+            <p class="gs_reveal"><a href="https://greensock.com/drawsvg/">DrawSVGPlugin</a> allows you to progressively reveal (or hide) SVG strokes to make them look like they're being drawn. <a href="https://greensock.com/morphsvg/">MorphSVGPlugin</a> to Morph any SVG shape into any other shape smoothly regardless of the number of points in each. <a href="/docs/v3/Plugins/MotionPathPlugin">MotionPathPlugin</a> allows you to easily move any object along a path.</p>
+          </div>
+        </div>
+
+        <div class="feature ipsSpacer_bottom_double ipsGrid ipsGrid_collapsePhone">
+          <div class="ipsGrid_span7 ipsType_right">
+            <h2 class="heading_large gs_reveal">Supercharge immersive <strong>WebGL</strong> experiences</h2>
+            <p class="gs_reveal">GreenSock is used in some of the most popular <a href="//threejs.org/">Three.js</a> powered WebGL projects. Animate any object in a scene. <a href="https://greensock.com/PixiPlugin/">PixiPlugin</a> makes animating <a href="//www.pixijs.com/">Pixi.js</a> objects with GSAP a breeze. Animate position, scale, color effects and more with all the power and control of GSAP and the rendering speed of Pixi.js.</p>
+          </div>
+
+          <div class="featured-image-container ipsGrid_span5 gs_reveal gs_reveal_fromRight">
+            <div class="card">
+              <img width="479" src="https://picsum.photos/479/479?index=2" alt="">
+            </div>
+          </div>
+        </div>
+
+        <div class="feature ipsSpacer_bottom_double ipsGrid ipsGrid_collapsePhone">
+          <div class="featured-image-container ipsGrid_span5 gs_reveal gs_reveal_fromLeft">
+            <div class="card">
+              <img width="479" src="https://picsum.photos/479/479?index=3" alt="">
+            </div>
+          </div>
+
+          <div class="ipsGrid_span7 ipsType_left">
+            <h2 class="heading_large gs_reveal">Control performant <strong>Canvas</strong> animations</h2>
+            <p class="gs_reveal">GSAP makes animating with Canvas even easier by providing an easier way to look and sequence animations. GSAP works great with <a href="//www.adobe.com/products/animate.html">Adobe Animate</a> and <a href="//createjs.com/easeljs">EaseJS</a> through GSAP's <a href="https://greensock.com/easelplugin/">EaselJSPlugin</a>.</p>
+          </div>
+        </div>
+
+        <div class="feature ipsSpacer_bottom_double ipsGrid ipsGrid_collapsePhone">
+          <div class="ipsGrid_span7 ipsType_right">
+            <h2 class="heading_large gs_reveal"><strong>Award winning</strong> websites</h2>
+            <p class="gs_reveal">GSAP is used on over 8,500,000 sites and over 1,000 sites featured on <a href="https://www.awwwards.com/websites/gsap-animation/" target="_blank">Awwwards</a>. For some of our favorites, check out <a href="https://greensock.com/showcase/">our showcase</a>.</p>
+          </div>
+
+          <div class="featured-image-container ipsGrid_span5 gs_reveal gs_reveal_fromRight">
+            <div class="card">
+              <img width="479" src="https://picsum.photos/479/479?index=4" alt="">
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
   </div>
 
 </div>
