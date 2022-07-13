@@ -1,9 +1,7 @@
 import {AfterViewInit, Component, OnInit} from '@angular/core';
-import gsap from "gsap-trial";
-import ScrollTrigger from "gsap-trial/ScrollTrigger";
-import ScrollSmoother from "gsap-trial/ScrollSmoother";
-import SplitText from 'gsap-trial/SplitText'
-import Scrollbar from 'smooth-scrollbar';
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import ScrollToPlugin from 'gsap/ScrollToPlugin';
 
 @Component({
   selector: 'app-ex01',
@@ -11,6 +9,9 @@ import Scrollbar from 'smooth-scrollbar';
   styleUrls: ['./ex01.component.scss']
 })
 export class Ex01Component implements OnInit, AfterViewInit {
+
+  container: any;
+  height: any;
 
   smoother: any;
   text1: any;
@@ -20,25 +21,37 @@ export class Ex01Component implements OnInit, AfterViewInit {
   constructor() {
   }
 
-  ngOnInit(): void {
-    gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
-  }
+  ngOnInit(): void {}
 
-  ngAfterViewInit(): void {
-    this.smoother = ScrollSmoother.create({
-      wrapper: '#section-wrap',
-      content: '#section-content',
-      smooth: 2,
-      smoothTouch: true,
-      effects: true,
+  async ngAfterViewInit(): Promise<void> {
+
+    this.container = document.querySelector('#section-wrap');
+
+    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+    ScrollTrigger.addEventListener("refreshInit", () => {
+      this.setHeight();
     });
+
+    gsap.to(this.container, {
+      y: () => -(this.height - document.documentElement.clientHeight),
+      ease: "none",
+      scrollTrigger: {
+        trigger: document.body,
+        start: "top top",
+        end: "bottom bottom",
+        scrub: 1,
+        invalidateOnRefresh: true
+      }
+    });
+
 
     const sec2: any = document.querySelector('#gsap-section-02');
     const sec2ScrollBox = gsap.timeline({
       scrollTrigger: {
         trigger: sec2,
         pin: true,
-        start: "top top",
+        start: "top center",
         end: "bottom bottom",
         markers: true,
         toggleActions: "play none none reverse",
@@ -59,7 +72,7 @@ export class Ex01Component implements OnInit, AfterViewInit {
         markers: true,
         toggleActions: "play none none reverse",
         onEnter: () => {
-          this.initTextAnimation();
+          // this.initTextAnimation();
         },
       }
     });
@@ -76,34 +89,38 @@ export class Ex01Component implements OnInit, AfterViewInit {
         onEnterBack: () => { this.animateFrom(elem, -1) },
         onLeave: () => { this.hide(elem) } // assure that the element is hidden when scrolled into view
       });
-    })
 
-    // const videoEl = <HTMLMediaElement>document.querySelector('#play-video-sample');
-    const videoEl: any = document.querySelector('#play-video-sample');
+    })
+    let videoEl = <HTMLMediaElement>document.querySelector('#play-video-sample');
 
     if (videoEl) {
-      videoEl.play();
+      videoEl.loop = true;
+      videoEl.muted = true;
+      videoEl.autoplay = true;
     }
+  }
 
-
+  setHeight() {
+    this.height = this.container.clientHeight;
+    document.body.style.height = this.height + 'px';
   }
 
   moveTop(): void {
   }
 
   initTextAnimation(): void {
-    gsap.set("#quote", {autoAlpha: 1})
-    this.split = new SplitText('h1', {type: 'chars'})
-    let animation = gsap.timeline({})
-    animation.from(this.split.chars, {
-      opacity: 0,
-      y: 30,
-      ease: 'back(4)',
-      stagger: {
-        from: 'start', //try "center" and "edges"
-        each: 0.03
-      }
-    })
+    // gsap.set("#quote", {autoAlpha: 1})
+    // this.split = new SplitText('h1', {type: 'chars'})
+    // let animation = gsap.timeline({})
+    // animation.from(this.split.chars, {
+    //   opacity: 0,
+    //   y: 30,
+    //   ease: 'back(4)',
+    //   stagger: {
+    //     from: 'start', //try "center" and "edges"
+    //     each: 0.03
+    //   }
+    // })
     // GSDevTools.create({animation: animation})
   }
 

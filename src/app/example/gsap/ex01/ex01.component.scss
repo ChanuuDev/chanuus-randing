@@ -79,7 +79,6 @@
   background-color: #e26c16;
 }
 
-
 #quote {
   padding-top: 200px;
 
@@ -148,9 +147,8 @@
   /*   transition: 0.3s; */
 }
 .featured-image-container .card {
-  padding: 10px;
   height: 0;
-  padding-bottom: calc(100% - 10px);
+  padding: 10px 10px calc(100% - 10px);
 }
 h2.heading_large {
   font-size: 1.8em;
@@ -193,3 +191,25 @@ img {
   }
 }
 
+.section-wrap {
+  width: 100%;
+
+  #section-content {
+
+  }
+}
+
+.quick-link {
+  position: fixed;
+  right: 0;
+  z-index: 1000;
+  width: 100px;
+  top: 50vh;
+  background-color: red;
+
+  ul {
+    li {
+
+    }
+  }
+}

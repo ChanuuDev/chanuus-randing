@@ -13,6 +13,11 @@ const routes: Routes = [
           import('./randing/randing.module').then((m) => m.RandingModule),
       },
       {
+        path: 'gsap',
+        loadChildren: () =>
+          import('./example/gsap/gsap.module').then((m) => m.GsapModule),
+      },
+      {
         path: 'three',
         loadChildren: () =>
           import('./example/three-js/three-js.module').then((m) => m.ThreeJsModule),
@@ -21,11 +26,6 @@ const routes: Routes = [
         path: 'lottie',
         loadChildren: () =>
           import('./example/lottie/lottie.module').then((m) => m.LottieModule),
-      },
-      {
-        path: 'gsap',
-        loadChildren: () =>
-          import('./example/gsap/gsap.module').then((m) => m.GsapModule),
       },
     ]
   },

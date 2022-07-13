@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css?family=Signika+Negative:300,400&display=swap');
+
+html, body, section.horizontal {
+  overflow: hidden;
+}
+
+body {
+  font-family: "Signika Negative", sans-serif;
+  font-weight: 300;
+
+  margin: 0;
+  padding: 0;
+}
+
+body#main-scrollbar {
+  width: auto;
+  height: 100vh;
+  overflow: auto;
+  margin: 0;
+}
+
+h1 {
+  margin: 0;
+  padding: 50px 0 0 50px;
+}
+
+p {
+  margin: 0;
+  padding: 50px 0 50px 50px;
+}
+
+section {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+
+section:nth-of-type(odd) {
+  background-color: #f0f0f0;
+}
+
+section:nth-of-type(even) {
+  background-color: #ffffff;
+}
+
+
+section.horizontal {
+  overflow-x: hidden;
+}
+
+section.horizontal .pin-wrap,
+section.horizontal .animation-wrap {
+  display: flex;
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+}
+
+
+section.horizontal .item {
+  position: relative;
+  padding: 150px 80px;
+  flex: 0 0 500px;
+  height: calc(100vh - 300px);
+  display: flex;
+  align-items: center;
+  line-height: 1.7;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border-right: 1px solid rgba(0, 0, 0, 0.06);
+  background-color: transparent;
+}
+
+section.horizontal .item:before {
+  position: absolute;
+  font-size: 100px;
+  opacity: .13;
+  font-weight: bold;
+  z-index: -1;
+  -webkit-transform: translate(-30px, -50px);
+  transform: translate(-30px, -50px);
+  line-height: 1;
+}
+
+
+section.horizontal .animation-wrap.to-right {
+  counter-reset: item;
+  float: left;
+}
+
+section.horizontal .animation-wrap.to-left {
+  counter-reset: item 11;
+  float: right;
+}
+
+section.horizontal .animation-wrap.to-right .item:before {
+  counter-increment: item;
+  content: counter(item);
+}
+
+section.horizontal .animation-wrap.to-left .item:before {
+  counter-increment: item -1;
+  content: counter(item);
+}
+
+
+section.horizontal .animation-wrap .item:nth-child(2n+2) {
+  align-items: flex-start;
+}
+
+section.horizontal .animation-wrap .item:nth-child(4n+4) {
+  align-items: flex-end;
+}
