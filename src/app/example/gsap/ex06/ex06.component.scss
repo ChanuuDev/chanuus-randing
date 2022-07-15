@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
+
+.container-wrap {
+  background-color: #000;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Orbitron", sans-serif;
+  overflow: hidden;
+  text-align: center;
+
+  h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    color: white;
+    //transform: skew(var(--skew));
+    transform: skew(var(--skew)) scale(var(--scale));
+
+    &::after, &::before {
+      content: attr(data-text);
+      position: absolute;
+      width: 100%;
+      transition: clip-path 50ms ease-in;
+      background-color: #1a1a1a;
+    }
+
+    &::before {
+      left: 5px;
+      text-shadow: 3px -3px #3fff00;
+      clip-path: polygon(0 var(--t1), 100% var(--t1), 100% var(--b1), 0 var(--b1));
+    }
+
+    &::after {
+      left: -5px;
+      text-shadow: -3px 3px #ff0000;
+      clip-path: polygon(0 var(--t2), 100% var(--t2), 100% var(--b2), 0 var(--b2));
+    }
+  }
+}

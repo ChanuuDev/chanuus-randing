@@ -14,6 +14,7 @@ export function playerFactory() {
 /* Example Component Routes */
 const routes: Routes = [
   {path: 'ex01', component: Ex01Component},
+  {path: 'ex02', component: Ex02Component},
   {path: '', redirectTo: 'ex01', pathMatch: 'full'},
 ];
 

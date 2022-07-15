@@ -96,6 +96,7 @@ export class Ex01Component implements OnInit, AfterViewInit {
     if (videoEl) {
       videoEl.loop = true;
       videoEl.muted = true;
+      videoEl.controls = true;
       videoEl.autoplay = true;
     }
   }
