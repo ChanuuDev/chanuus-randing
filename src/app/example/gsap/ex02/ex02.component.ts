@@ -41,7 +41,8 @@ export class Ex02Component implements OnInit, AfterViewInit {
         start: "top top",
         end: "bottom bottom",
         scrub: 1,
-        invalidateOnRefresh: true
+        invalidateOnRefresh: true,
+        markers: true,
       }
     });
 

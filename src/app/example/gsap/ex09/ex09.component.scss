@@ -1,0 +1,51 @@
+* {
+  margin : 0;
+  padding : 0;
+}
+
+.wrapper {
+  min-height: 100vh;
+  background: #1d373f;
+  overflow-x: hidden;
+}
+
+.factsContainer {
+  padding: 0em 2em;
+  text-align: center;
+  line-height: 10vh;
+}
+
+.factsContainer h2 {
+  font-size: 1.8em;
+  transform: scale(0);
+  padding: 2em 0em;
+  margin-bottom: 15vh;
+  color: #F0C368;
+}
+
+.factsContainer_sm {
+  display: flex;
+  width: 300vw;
+}
+
+.fact {
+  display: flex;
+  flex-direction: column;
+  height: 40vh;
+  flex: 1;
+  justify-content: space-between;
+  padding: 1em;
+  align-items: center;
+  color: #F0C368;
+}
+
+.fact img {
+  width: 25vw;
+  height: 25vh;
+  margin: 1em;
+}
+
+.socialContainer{
+  width: 100vw;
+  height: 100vh;
+}

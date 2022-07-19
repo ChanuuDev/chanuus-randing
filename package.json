@@ -27,6 +27,7 @@
     "dat.gui": "^0.7.9",
     "gsap": "^3.10.4",
     "jquery": "^3.6.0",
+    "locomotive-scroll": "^4.1.4",
     "lottie-web": "^5.9.5",
     "ngx-lottie": "^8.2.0",
     "rxjs": "~7.5.0",
