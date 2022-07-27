@@ -25,8 +25,22 @@ export class Ex09Component implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.container = document.querySelector(".wrapper");
+    this.container = document.querySelector('.wrapper');
     gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+    // smooth scrolling container
+    gsap.to(this.container, {
+      y: () => -(this.height - document.documentElement.clientHeight),
+      ease: 'none',
+      scrollTrigger: {
+        trigger: document.body,
+        start: 'top top',
+        end: 'bottom bottom',
+        scrub: 1,
+        invalidateOnRefresh: true,
+        markers: true,
+      }
+    });
 
     let scroll_tl = gsap.timeline({
         scrollTrigger: {
@@ -39,7 +53,8 @@ export class Ex09Component implements OnInit, AfterViewInit {
         }
       });
 
-    let facts: any = document.querySelectorAll('.fact');
+    let facts1: any = document.querySelectorAll('.factsContainer_sm .fact');
+    let facts2: any = document.querySelectorAll('.factsContainer_sm2 .fact');
 
     scroll_tl.to('.factsContainer h2', {
       scale: 1.5,
@@ -47,8 +62,10 @@ export class Ex09Component implements OnInit, AfterViewInit {
       ease: "slow"
     });
 
-    scroll_tl.to(facts, {
-      xPercent: -85 * (facts.length - 1),
+    let smallFactsContainer: any = document.querySelector('.factsContainer_sm');
+
+    scroll_tl.to(facts1, {
+      xPercent: -85 * (facts1.length - 1),
       scrollTrigger: {
         trigger: ".factsContainer_sm",
         start: "center center",
@@ -59,8 +76,25 @@ export class Ex09Component implements OnInit, AfterViewInit {
         scrub: 1,
         // snap: 1 / (facts.length - 1),
         // base vertical scrolling on how wide the container is so it feels more natural.
+        end: () => `+=${smallFactsContainer.offsetWidth}`
+        // end: () => `+=4320`
+      }
+    });
+
+    scroll_tl.to(facts2, {
+      xPercent: 85 * (facts2.length - 1),
+      scrollTrigger: {
+        trigger: ".factsContainer_sm2",
+        start: "center center",
+        pin: true,
+        // horizontal: true,
+        // pinSpacing:false,
+        // markers: true,
+        scrub: 1,
+        // snap: 1 / (facts.length - 1),
+        // base vertical scrolling on how wide the container is so it feels more natural.
         // end: () => `+=${smallFactsContainer.offsetWidth}`
-        end: () => `+=4320`
+        // end: () => `+=4320`
       }
     });
 
