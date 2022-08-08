@@ -13,7 +13,8 @@ export class Ex09Component implements OnInit, AfterViewInit {
   container: any;
   height: any;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
     gsap.registerPlugin(ScrollTrigger);
@@ -43,15 +44,15 @@ export class Ex09Component implements OnInit, AfterViewInit {
     });
 
     let scroll_tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: '.factsContainer',
-          start: "top center",
-          // pin: true,
-          scrub: true,
-          end: "+=300",
-          // markers: true,
-        }
-      });
+      scrollTrigger: {
+        trigger: '.factsContainer',
+        start: "top center",
+        // pin: true,
+        scrub: true,
+        end: "+=300",
+        // markers: true,
+      }
+    });
 
     let facts1: any = document.querySelectorAll('.factsContainer_sm .fact');
     let facts2: any = document.querySelectorAll('.factsContainer_sm2 .fact');
