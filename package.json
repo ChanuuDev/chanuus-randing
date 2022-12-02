@@ -21,6 +21,7 @@
     "@angular/router": "^14.0.5",
     "@ng-bootstrap/ng-bootstrap": "^13.0.0-beta.1",
     "@popperjs/core": "^2.10.2",
+    "@studio-freight/lenis": "^0.2.24",
     "@types/gsap": "^3.0.0",
     "@types/three": "^0.141.0",
     "animejs": "^3.2.1",

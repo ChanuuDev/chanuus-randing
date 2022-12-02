@@ -10,9 +10,7 @@ export class Ex01Component implements OnInit, AfterViewInit {
 
   @ViewChild('threeCanvas') threeCanvasEl: ElementRef | undefined;
 
-  constructor(
-    private renderer: Renderer2,
-  ) {
+  constructor() {
   }
 
   ngOnInit(): void {
@@ -49,7 +47,6 @@ export class Ex01Component implements OnInit, AfterViewInit {
       });
       renderer.setSize(window.innerWidth, window.innerHeight);
 
-
       // geometry 물체 크기
       const geometry = new THREE.BoxGeometry(1, 1, 1);
 
@@ -62,9 +59,9 @@ export class Ex01Component implements OnInit, AfterViewInit {
       scene.add(cube);
 
       const cube2 = new THREE.Mesh(geometry, material2);
-      scene.add(cube2);
+      // scene.add(cube2);
 
-      const animate = function () {
+      const animate = () => {
         requestAnimationFrame(animate);
 
         cube.rotation.x += 0.01;
@@ -72,10 +69,15 @@ export class Ex01Component implements OnInit, AfterViewInit {
 
         renderer.render(scene, camera);
       };
+
       camera.position.z = 5;
       renderer.render(scene, camera);
       animate();
     }
+
+    // tangent => 접선에 수직인 직선 => Normal[법선]
+    // tangential
+    // tangential line
 
   }
 

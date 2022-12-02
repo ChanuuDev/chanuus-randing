@@ -11,6 +11,7 @@ import { Ex07Component } from './ex07/ex07.component';
 import { Ex08Component } from './ex08/ex08.component';
 import { Ex09Component } from './ex09/ex09.component';
 import { Ex10Component } from './ex10/ex10.component';
+import { Ex11Component } from './ex11/ex11.component';
 
 const routes: Routes = [
   {path: 'ex01', component: Ex01Component},
@@ -23,6 +24,7 @@ const routes: Routes = [
   {path: 'ex08', component: Ex08Component},
   {path: 'ex09', component: Ex09Component},
   {path: 'ex10', component: Ex10Component},
+  {path: 'ex11', component: Ex11Component},
   {path: '', redirectTo: 'ex01', pathMatch: 'full'},
 ];
 
@@ -37,7 +39,8 @@ const routes: Routes = [
     Ex07Component,
     Ex08Component,
     Ex09Component,
-    Ex10Component
+    Ex10Component,
+    Ex11Component
   ],
   imports: [CommonModule, RouterModule.forChild([...routes]),]
 })

@@ -15,5 +15,4 @@ export class RandingTemporarilyComponent implements OnInit {
   clickEl(event: any): void {
     console.log('click event ', event);
   }
-
 }
