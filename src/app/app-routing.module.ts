@@ -27,6 +27,10 @@ const routes: Routes = [
         loadChildren: () =>
           import('./example/lottie/lottie.module').then((m) => m.LottieModule),
       },
+      {
+        path: 'matter',
+        loadChildren: () => import('./example/matter/matter.module').then((m) => m.MatterModule),
+      }
     ]
   },
   { path: '**', redirectTo: 'error/404' },
