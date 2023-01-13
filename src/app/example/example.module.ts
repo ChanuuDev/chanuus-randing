@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { LottieModule } from './lottie/lottie.module';
 import {ThreeJsModule} from "./three-js/three-js.module";
 import { GsapModule } from './gsap/gsap.module';
+import {MatterModule} from './matter/matter.module';
 
 
 
@@ -14,6 +15,7 @@ import { GsapModule } from './gsap/gsap.module';
     LottieModule,
     ThreeJsModule,
     GsapModule,
+    MatterModule,
   ],
   exports: [],
 })

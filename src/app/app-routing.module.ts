@@ -30,7 +30,11 @@ const routes: Routes = [
       {
         path: 'matter',
         loadChildren: () => import('./example/matter/matter.module').then((m) => m.MatterModule),
-      }
+      },
+      {
+        path: 'testes',
+        loadChildren: () => import('./example/testes/testes.module').then((m) => m.TestesModule),
+      },
     ]
   },
   { path: '**', redirectTo: 'error/404' },

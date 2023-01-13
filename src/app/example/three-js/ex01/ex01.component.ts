@@ -78,7 +78,6 @@ export class Ex01Component implements OnInit, AfterViewInit {
     // tangent => 접선에 수직인 직선 => Normal[법선]
     // tangential
     // tangential line
-
   }
 
 

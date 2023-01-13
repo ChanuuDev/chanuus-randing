@@ -12,36 +12,40 @@ export class Ex01Component implements OnInit {
   Render = Matter.Render;
   World = Matter.World;
   Bodies = Matter.Bodies;
+  Runner = Matter.Runner;
 
   constructor() { }
 
   ngOnInit(): void {
-    const wrapper: any = <HTMLElement>document.getElementById('matter-wrap');
+    const wrapper = <HTMLElement>document.getElementById('matter-wrap');
     const engine = this.Engine.create();
 
     const render = this.Render.create({
       element: wrapper,
       engine: engine,
       options: {
-        width: 800,
-        height: 400,
+        width: wrapper.offsetWidth,
+        height: wrapper.offsetHeight,
         wireframes: false
       }
     });
 
-    const boxA = this.Bodies.rectangle(400, 200, 80, 80);
-    const ballA = this.Bodies.circle(380, 100, 40);
+    const boxA = this.Bodies.rectangle(801, 300, 80, 80);
+
+    const ballA = this.Bodies.circle(750, 100, 40);
+
     const ballB = this.Bodies.circle(0, 10, 40);
+
     const trace = this.Bodies.rectangle(120, 220, 500, 60, { isStatic: true })
-    Matter.Body.setAngle(trace, .5);
+
+    Matter.Body.setAngle(trace, .8);
     Matter.Body.setMass(ballB, 50);
 
     const ground = this.Bodies.rectangle(400, 380, 810, 60, { isStatic: true });
 
     this.World.add(engine.world, [boxA, ballA, ballB, ground, trace]);
-    this.Engine.run(engine);
+
+    this.Runner.run(engine);
     this.Render.run(render);
-
   }
-
 }
