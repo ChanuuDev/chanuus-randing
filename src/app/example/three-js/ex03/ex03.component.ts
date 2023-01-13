@@ -5,6 +5,8 @@ import {mergeBufferGeometries} from 'three/examples/jsm/utils/BufferGeometryUtil
 import { GUI } from 'lil-gui';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import {ScrollToOptions} from 'smooth-scrollbar/interfaces';
+import ScrollToPlugin from 'gsap/ScrollToPlugin';
 
 @Component({
   selector: 'app-ex03',
@@ -19,7 +21,7 @@ export class Ex03Component implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
     const container = document.querySelector('.container');
     const boxCanvas = document.querySelector('#box-canvas');
