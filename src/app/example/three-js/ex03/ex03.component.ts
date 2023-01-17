@@ -1,11 +1,10 @@
 import {AfterViewInit, Component, OnInit} from '@angular/core';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import {mergeBufferGeometries} from 'three/examples/jsm/utils/BufferGeometryUtils.js';
+import { mergeBufferGeometries } from 'three/examples/jsm/utils/BufferGeometryUtils.js';
 import { GUI } from 'lil-gui';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import {ScrollToOptions} from 'smooth-scrollbar/interfaces';
 import ScrollToPlugin from 'gsap/ScrollToPlugin';
 
 @Component({
@@ -25,6 +24,7 @@ export class Ex03Component implements OnInit, AfterViewInit {
 
     const container = document.querySelector('.container');
     const boxCanvas = document.querySelector('#box-canvas');
+
     let box = {
       params: {
         width: 27,
@@ -100,19 +100,19 @@ export class Ex03Component implements OnInit, AfterViewInit {
 
     // Run the app
     initScene();
-    createControls();
+    createControlPanel();
     window.addEventListener('resize', updateSceneSize);
 
     // run the animation automatically on start
     window.onbeforeunload = function () {
       window.scrollTo(0, 0);
     }
+
     gsap.to(window, {
       duration: 1.5,
       scrollTo: window.innerHeight,
       ease: 'power1.inOut'
     });
-
 
     // Three.js scene
     function initScene() {
@@ -156,6 +156,7 @@ export class Ex03Component implements OnInit, AfterViewInit {
         color: new THREE.Color(0x9C8D7B),
         side: THREE.DoubleSide
       });
+
       box.els.group.traverse(c => {
         // @ts-ignore
         if (c.isMesh) { c.material = material; }
@@ -167,16 +168,17 @@ export class Ex03Component implements OnInit, AfterViewInit {
       orbit.enablePan = false;
       orbit.enableDamping = true;
       orbit.autoRotate = true;
-      orbit.autoRotateSpeed = .25;
+      orbit.autoRotateSpeed = .5;
 
       createCopyright();
       createBoxElements();
-      createFoldingAnimation();
       createZooming();
+      createFoldingAnimation();
 
       draw();
     }
 
+    /* 재귀 */
     function draw() {
       // @ts-ignore
       orbit.update();
@@ -200,10 +202,9 @@ export class Ex03Component implements OnInit, AfterViewInit {
       // @ts-ignore
       renderer.setSize(container.clientWidth, container.clientHeight);
     }
-// End of Three.js scene
+    // End of Three.js scene
 
-
-// Box geometries
+    // Box geometries
     function setGeometryHierarchy() {
       box.els.group.add(box.els.frontHalf.width.side, box.els.frontHalf.length.side, box.els.backHalf.width.side, box.els.backHalf.length.side);
       box.els.frontHalf.width.side.add(box.els.frontHalf.width.top, box.els.frontHalf.width.bottom);
@@ -321,13 +322,11 @@ export class Ex03Component implements OnInit, AfterViewInit {
 
       return mergedGeometry;
     }
+    // End of box geometries
+    // --------------------------------------------------
 
-// End of box geometries
-// --------------------------------------------------
-
-// --------------------------------------------------
-// Clickable copyright
-
+    // --------------------------------------------------
+    // Clickable copyright
     function createCopyright() {
       const canvas = document.createElement('canvas');
       canvas.width = box.params.copyrightSize[0] * 10;
@@ -406,13 +405,11 @@ export class Ex03Component implements OnInit, AfterViewInit {
       }
       return linkHovered;
     }
+    // End of Clickable copyright
+    // --------------------------------------------------
 
-// End of Clickable copyright
-// --------------------------------------------------
-
-// --------------------------------------------------
-// Animation
-
+    // --------------------------------------------------
+    // Animation
     function createFoldingAnimation() {
       gsap.timeline({
         scrollTrigger: {
@@ -502,15 +499,12 @@ export class Ex03Component implements OnInit, AfterViewInit {
       // @ts-ignore
       copyright.position.z += box.params.thickness;
     }
+    // End of animation
+    // --------------------------------------------------
 
-// End of animation
-// --------------------------------------------------
 
-
-// --------------------------------------------------
-// Manual zoom (buttons only since the scroll is used
-// by folding animation)
-
+    // --------------------------------------------------
+    // Manual zoom (buttons only since the scroll is used by folding animation)
     function createZooming() {
       const zoomInBtn = document.querySelector('#zoom-in');
       const zoomOutBtn = document.querySelector('#zoom-out');
@@ -556,14 +550,12 @@ export class Ex03Component implements OnInit, AfterViewInit {
         })
       }
     }
+    // End of Manual zoom
+    // --------------------------------------------------
 
-// End of Manual zoom
-// --------------------------------------------------
-
-// --------------------------------------------------
-// Range sliders for box parameters
-
-    function createControls() {
+    // --------------------------------------------------
+    // Range sliders for box parameters
+    function createControlPanel() {
       const gui = new GUI();
       gui.add(box.params, 'width', box.params.widthLimits[0], box.params.widthLimits[1]).step(1).onChange(() => {
         createBoxElements();
