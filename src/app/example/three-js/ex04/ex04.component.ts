@@ -45,7 +45,7 @@ export class Ex04Component implements OnInit {
       antialias: true,
     });
 
-    renderer.setSize(window.innerWidth / 2, window.innerHeight / 2);
+    renderer.setSize(window.innerWidth, window.innerHeight);
     // device dpi
     renderer.setPixelRatio(window.devicePixelRatio > 1 ? 2 : 1);
 

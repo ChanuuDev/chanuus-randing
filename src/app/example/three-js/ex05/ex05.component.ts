@@ -22,7 +22,7 @@ export class Ex05Component implements OnInit {
   }
 
   async example(): Promise<void> {
-    const canvas = document.getElementById('three-canvas');
+    const canvas = document.getElementById('three-canvas-ex05');
 
     if (!canvas) {
       console.error('canvas was not found!');
@@ -34,7 +34,7 @@ export class Ex05Component implements OnInit {
       antialias: true,
     });
 
-    renderer.setSize(window.innerWidth / 2, window.innerHeight / 2);
+    renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(window.devicePixelRatio > 1 ? 2 : 1);
 
 
