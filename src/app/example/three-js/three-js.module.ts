@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: 'ex02', component: Ex02Component },
   { path: 'ex03', component: Ex03Component },
   { path: 'ex04', component: Ex04Component },
+  { path: 'ex05', component: Ex05Component },
   { path: '', redirectTo: 'ex01', pathMatch: 'full' },
 ];
 
