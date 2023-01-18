@@ -1,17 +1,32 @@
 import {Component, OnInit} from '@angular/core';
 import * as THREE from 'three';
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls';
-import {ImagePanel} from './image-panel';
+import {Router} from '@angular/router';
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition,
+} from '@angular/animations';
 
 /** @description Geometry 파티클 */
 @Component({
   selector: 'app-ex04',
   templateUrl: './ex04.component.html',
-  styleUrls: ['./ex04.component.scss']
+  styleUrls: ['./ex04.component.scss'],
 })
 export class Ex04Component implements OnInit {
 
-  constructor() {
+  isOpen = true;
+
+  constructor(
+    private router: Router
+  ) {
+  }
+
+  toggle() {
+    this.isOpen = !this.isOpen;
   }
 
   async ngOnInit(): Promise<void> {
@@ -30,7 +45,7 @@ export class Ex04Component implements OnInit {
       antialias: true,
     });
 
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setSize(window.innerWidth / 2, window.innerHeight / 2);
     // device dpi
     renderer.setPixelRatio(window.devicePixelRatio > 1 ? 2 : 1);
 
@@ -154,12 +169,30 @@ export class Ex04Component implements OnInit {
       renderer.render(scene, camera);
     }
 
+    // Controller
+    const buttonWrapper = document.createElement('div');
+    buttonWrapper.classList.add('button-list');
+
+    const moveButton = document.createElement('button');
+    moveButton.setAttribute('dataset', 'page-move');
+    moveButton.style.cssText = `position: absolute; left: 20px; top: 20px`;
+    moveButton.innerHTML = `Page Move`;
+    buttonWrapper.append(moveButton);
+
+    document.body.append(buttonWrapper);
+
     // 이벤트
     window.addEventListener('resize', setSize);
+
+    moveButton.addEventListener('click', () => {
+      this.moveLink('/three/ex05');
+    });
 
     draw();
   }
 
-
+  moveLink(url: string): void {
+    this.router.navigateByUrl(url).then();
+  }
 
 }
