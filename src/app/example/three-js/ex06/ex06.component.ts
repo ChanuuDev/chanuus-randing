@@ -13,7 +13,5 @@ export class Ex06Component implements OnInit {
   }
 
   example(): void {
-
   }
-
 }
