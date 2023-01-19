@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {AppComponent} from './app.component';
 
 const routes: Routes = [
   {
@@ -29,19 +29,27 @@ const routes: Routes = [
       },
       {
         path: 'matter',
-        loadChildren: () => import('./example/matter/matter.module').then((m) => m.MatterModule),
+        loadChildren: () =>
+          import('./example/matter/matter.module').then((m) => m.MatterModule),
+      },
+      {
+        path: 'material',
+        loadChildren: () =>
+          import('./example/material/material.module').then((m) => m.MaterialModule),
       },
       {
         path: 'testes',
-        loadChildren: () => import('./example/testes/testes.module').then((m) => m.TestesModule),
+        loadChildren: () =>
+          import('./example/testes/testes.module').then((m) => m.TestesModule),
       },
     ]
   },
-  { path: '**', redirectTo: 'error/404' },
+  {path: '**', redirectTo: 'error/404'},
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
