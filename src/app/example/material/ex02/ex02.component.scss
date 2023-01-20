@@ -1,0 +1,98 @@
+
+.cupertino-container-wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-color: #d0d0d0;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  box-sizing: border-box;
+
+  .destroy-button {
+    display: none;
+  }
+
+  .cupertino-container {
+    width: 100%;
+    max-width: 500px;
+    height: 100%;
+    background-color: #000000;
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 1920px;
+
+    .cupertino-controller {
+      width: 100%;
+      top: 20px;
+      display: inline-flex;
+      position: absolute;
+      z-index: 1;
+      justify-content: center;
+
+      .control {
+        width: 80px;
+        font-weight: 700;
+        text-align: center;
+        cursor: pointer;
+
+        &.bright {
+          color: #ffffff;
+          border: 1px solid #ffffff;
+          transition: all 0.4s ease;
+        }
+
+        &.dark {
+          color: #000000;
+          border: 1px solid #000000;
+          transition: all 0.4s ease;
+        }
+      }
+    }
+
+    .cupertino-container-card {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+    }
+
+    .cupertino-container-bg {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      object-fit: cover;
+      transition: 0.6s all ease;
+
+      &.front {
+        backface-visibility: hidden;
+
+        img {
+          opacity: 0.5;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        transform: rotateY(180deg);
+
+        &.visible {
+          transform: rotateY(0deg);
+        }
+      }
+
+      &.back {
+        backface-visibility: hidden;
+        background: #ffffff;
+        transform: rotateY(180deg);
+        padding: 100px 20px;
+
+        &.visible {
+          transform: rotateY(0deg);
+        }
+      }
+    }
+  }
+
+  .cupertino-pane {
+    padding: 40px 20px;
+  }
+}
+

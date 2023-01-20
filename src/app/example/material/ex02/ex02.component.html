@@ -1,1 +1,47 @@
 <!-- draggable bottom sheet example -->
+<div class="cupertino-container-wrapper">
+
+  <div class="cupertino-container">
+    <div class="cupertino-controller">
+      <div class="control front"
+           [ngClass]="cardFace === 'front' ? 'bright' : 'dark'"
+           (click)="toggleCardFace('front')">
+        Front
+      </div>
+      <div class="control back"
+           [ngClass]="cardFace === 'front' ? 'bright' : 'dark'"
+           (click)="toggleCardFace('back')">
+        Back
+      </div>
+    </div>
+
+    <div class="cupertino-container-card">
+      <div class="cupertino-container-bg front"
+           [ngClass]="cardFace === 'front' ? 'visible' : ''">
+        <img class=""
+             alt=""
+             src="./assets/images/material/AnyConv.com__sample_img_benefit_01.webp">
+      </div>
+
+
+      <div class="cupertino-container-bg back"
+           [ngClass]="cardFace === 'back' ? 'visible' : ''">
+        <div>작가 이력</div>
+        <div>작가 이력</div>
+        <div>작가 이력</div>
+        <div>작가 이력</div>
+        <div>작가 이력</div>
+        <div>작가 이력</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="cupertino-pane">
+  <div class="content">작가 컨텐츠</div>
+  <div class="content">작가 컨텐츠</div>
+  <div class="content">작가 컨텐츠</div>
+  <div class="content">작가 컨텐츠</div>
+  <div class="content">작가 컨텐츠</div>
+</div>
