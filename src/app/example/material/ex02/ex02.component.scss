@@ -173,9 +173,12 @@
 }
 
 .cupertino-pane-wrapper.test {
-  .pane {
+  div.pane {
     background: red;
     border-radius: 50px 50px 0 0;
   }
 }
 
+.cupertino-pane-wrapper .pane {
+  border-radius: 50%;
+}

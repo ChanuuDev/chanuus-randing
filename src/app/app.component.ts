@@ -25,6 +25,13 @@ export class AppComponent implements OnInit, AfterViewInit {
         window.scrollTo(0, 1);
       }, 100);
     });
+
+    const appHeight = () => {
+      const doc = document.documentElement
+      doc.style.setProperty('--app-height', `${window.innerHeight}px`)
+    }
+    window.addEventListener('resize', appHeight)
+    appHeight()
   }
 
   ngAfterViewInit(): void {

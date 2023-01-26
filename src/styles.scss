@@ -1,11 +1,6 @@
 @import "./assets/styles/utils";
 @import '~bootstrap/scss/bootstrap';
 
-body {
-  margin: 0;
-  padding: 0;
-}
-
 :root {
   --bg-red {
     background-color: red;
@@ -21,9 +16,41 @@ body {
   --white-01: #ffffff;
   --text-color: #111;
   --bg-color: #b9b3a9;
+
+  --app-height: 100%;
+
+  --cupertino-pane-border-radius: 50px;
 }
 
 html {
   scroll-behavior: smooth !important;
+}
+
+
+:root {
+  --app-height: 100%;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+
+  @media not all and (hover:hover) {
+    height: var(--app-height);
+  }
+}
+
+.cupertino-pane-wrapper .draggable .move {
+  width: 86px;
+  height: 9px;
+  background: #e8e8e8;
+}
+
+.cupertino-pane-wrapper .pane .draggable {
+  padding-top: 20px;
 }
 

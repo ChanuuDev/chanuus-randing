@@ -34,7 +34,7 @@ export class Ex02Component implements OnInit {
       },
       middle: {
         enabled: true,
-        height: 80,
+        height: 50,
       },
       bottom: { enabled: false }
     },
