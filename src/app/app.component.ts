@@ -20,6 +20,11 @@ export class AppComponent implements OnInit, AfterViewInit {
     private contexts: ChildrenOutletContexts,
     private router: Router,
   ) {
+    window.addEventListener('load',() => {
+      setTimeout(() => {
+        window.scrollTo(0, 1);
+      }, 100);
+    });
   }
 
   ngAfterViewInit(): void {

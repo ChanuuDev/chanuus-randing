@@ -30,7 +30,7 @@ export class Ex02Component implements OnInit {
     breaks: {
       top: { // Topper point that pane can reach
         enabled: true, // Enable or disable breakpoint
-        height: 800, // Pane breakpoint height
+        height: 700, // Pane breakpoint height
       },
       middle: {
         enabled: true,
@@ -54,6 +54,12 @@ export class Ex02Component implements OnInit {
     });
 
     await this.showPane();
+
+    window.addEventListener('load',() => {
+      setTimeout(() => {
+        window.scrollTo(0, 1);
+      }, 100);
+    });
   }
 
   async showPane(): Promise<void> {
