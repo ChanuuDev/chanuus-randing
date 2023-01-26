@@ -24,7 +24,6 @@
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
-  cursor: move;
   background: white;
   font-size: 14px;
 }
@@ -51,4 +50,23 @@
 
 .example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
   transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.example-handle {
+  cursor: grab;
+}
+
+.counting-controller-wrap {
+  display: block;
+
+  .counting-controller {
+    display: inline-block;
+
+    button {
+      width: 30px;
+      text-align: center;
+      margin-right: 5px;
+    }
+  }
+
 }

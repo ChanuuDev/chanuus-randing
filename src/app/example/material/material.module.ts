@@ -3,7 +3,8 @@ import {CommonModule} from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
 import {Ex01Component} from './ex01/ex01.component';
 import {DragDropModule} from '@angular/cdk/drag-drop';
-import {Ex02Component} from './ex02/ex02.component';
+import { Ex01ChildComponent } from './ex01/ex01-child/ex01-child.component';
+import { Ex02Component } from './ex02/ex02.component';
 
 const routes: Routes = [
   {path: 'ex01', component: Ex01Component},
@@ -14,6 +15,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     Ex01Component,
+    Ex01ChildComponent,
     Ex02Component
   ],
   imports: [
