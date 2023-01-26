@@ -1,3 +1,4 @@
+@import 'src/assets/styles/mixins/text-styles';
 
 .cupertino-container-wrapper {
   width: 100vw;
@@ -23,17 +24,22 @@
 
     .cupertino-controller {
       width: 100%;
-      top: 20px;
+      top: 55px;
       display: inline-flex;
       position: absolute;
       z-index: 1;
       justify-content: center;
 
       .control {
-        width: 80px;
+        width: 125px;
+        height: 48px;
         font-weight: 700;
         text-align: center;
         cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include textStyleMontserrat(14px, 700);
 
         &.bright {
           color: #ffffff;
@@ -45,6 +51,16 @@
           color: #000000;
           border: 1px solid #000000;
           transition: all 0.4s ease;
+        }
+
+        &.bg-white {
+          background-color: white;
+          color: black;
+        }
+
+        &.bg-black {
+          background-color: black;
+          color: white;
         }
       }
     }
@@ -64,18 +80,78 @@
 
       &.front {
         backface-visibility: hidden;
+        transform: rotateY(180deg);
 
-        img {
-          opacity: 0.5;
+        .main-visual-panel {
           width: 100%;
           height: 100%;
           object-fit: cover;
+          opacity: 0.8;
         }
-        transform: rotateY(180deg);
+
+        .main-information-panel {
+          position: absolute;
+          width: 100%;
+          height: 55%;
+          bottom: 0;
+          background: linear-gradient(180deg, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.23) 9.22%, rgba(0, 0, 0, 0.4) 16.69%, rgba(0, 0, 0, 0.5) 24.48%, rgba(0, 0, 0, 0.6) 31.25%, rgba(0, 0, 0, 0.73) 36.98%, rgba(0, 0, 0, 0.82) 43.93%, rgba(0, 0, 0, 0.85) 51.71%, rgba(0, 0, 0, 0.88) 59.9%, rgba(0, 0, 0, 0.9) 67.19%, rgba(0, 0, 0, 0.95) 73.44%, #000000 79.17%, #000000 84.9%, #000000 91.15%, #000000 100%);
+          padding-top: 29.5%;
+          padding-left: 8.2%;
+          padding-right: 8.2%;
+
+          .main-information-panel-inner {
+            width: 100%;
+            height: 100%;
+
+            .share-button {
+              width: 46px;
+              height: 46px;
+              border-radius: 50%;
+              border: 1.5px solid white;
+              background: rgba(244, 244, 244, 0.15);
+              box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+
+            .artist-name {
+              margin-top: 6.2%;
+              @include textStyleMontserrat(40px, 700);
+              line-height: 49px;
+              color: white;
+            }
+
+            .artist-slogan {
+              @include textStyleMontserrat(17px, 400);
+              line-height: 21px;
+              color: #cccccc;
+            }
+
+            .artist-tags {
+              margin-top: 9%;
+              width: 100%;
+              overflow-x: hidden;
+              white-space:nowrap;
+
+              .artist-tag {
+                padding: 6px 12px;
+                border: 1px solid #CCCCCC;
+                color: #cccccc;
+                margin-right: 8px;
+                display: inline-block;
+                @include textStyleMontserrat(12px, 500);
+                line-height: 15px;
+
+              }
+            }
+          }
+        }
 
         &.visible {
           transform: rotateY(0deg);
         }
+
       }
 
       &.back {
@@ -93,6 +169,13 @@
 
   .cupertino-pane {
     padding: 40px 20px;
+  }
+}
+
+.cupertino-pane-wrapper.test {
+  .pane {
+    background: red;
+    border-radius: 50px 50px 0 0;
   }
 }
 

@@ -4,34 +4,54 @@
   <div class="cupertino-container">
     <div class="cupertino-controller">
       <div class="control front"
-           [ngClass]="cardFace === 'front' ? 'bright' : 'dark'"
-           (click)="toggleCardFace('front')">
-        Front
+           [ngClass]="getFrontControllerStyle()"
+           (click)="chooseCardFace(CardFace.Front)">
+        FRONT
       </div>
       <div class="control back"
-           [ngClass]="cardFace === 'front' ? 'bright' : 'dark'"
-           (click)="toggleCardFace('back')">
-        Back
+           [ngClass]="getBackControllerStyle()"
+           (click)="chooseCardFace(CardFace.Back)">
+        BACK
       </div>
     </div>
 
     <div class="cupertino-container-card">
+      <!-- 앞면 -->
       <div class="cupertino-container-bg front"
            [ngClass]="cardFace === 'front' ? 'visible' : ''">
-        <img class=""
+        <img class="main-visual-panel"
              alt=""
-             src="./assets/images/material/AnyConv.com__sample_img_benefit_01.webp">
+             src="./assets/images/material/chanuu_pic_03.jpg">
+<!--        <div class="vignetting-cover"></div>-->
+        <div class="main-information-panel">
+          <div class="main-information-panel-inner">
+            <div class="share-button">
+              <img alt="" src="./assets/icons/material/ex02/external-link.svg">
+            </div>
+            <div class="artist-name">
+              CHANUUS
+            </div>
+            <div class="artist-slogan">
+              I'm Chanwoo kim
+            </div>
+            <div class="artist-tags">
+              <div class="artist-tag">Developer</div>
+              <div class="artist-tag">FE</div>
+              <div class="artist-tag">BE</div>
+              <div class="artist-tag">Programing</div>
+            </div>
+          </div>
+        </div>
       </div>
 
-
+      <!-- 뒷면 -->
       <div class="cupertino-container-bg back"
            [ngClass]="cardFace === 'back' ? 'visible' : ''">
-        <div>작가 이력</div>
-        <div>작가 이력</div>
-        <div>작가 이력</div>
-        <div>작가 이력</div>
-        <div>작가 이력</div>
-        <div>작가 이력</div>
+        <div>아임 김찬우</div>
+        <div>테스트 1</div>
+        <div>테스트 2</div>
+        <div>테스트 3</div>
+        <div>테스트 4</div>
       </div>
     </div>
   </div>
