@@ -11,5 +11,4 @@ export class Ex03Component implements OnInit {
 
   ngOnInit(): void {
   }
-
 }
